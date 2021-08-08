@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    welcome = wikipedia_module.summary('Wikipedia')
+    welcome = 'Hello! Please enter a wikipedia search after the `.com/` to search for a Wikipedia summary.'
     return welcome
 
 @app.route('/<data>/')
