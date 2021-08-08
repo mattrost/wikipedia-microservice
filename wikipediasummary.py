@@ -14,7 +14,7 @@ def wikipedia(data):
         summary = wikipedia_module.summary(data)
         return summary
     except:
-        error = 'Wikipedia search had errors, please try another search query.
+        error = 'Wikipedia search had errors, please try another search query.'
         return error
 
 app.run()
