@@ -17,4 +17,5 @@ def wikipedia(data):
         error = 'Wikipedia search had errors, please try another search query.'
         return error
 
-app.run()
+if __name__ == '__main__':
+    app.run()
