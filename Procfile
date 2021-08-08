@@ -1,1 +1,1 @@
-web: gunicorn wikipediasummary.py
+web: gunicorn app:wikipediasummary
