@@ -19,11 +19,17 @@ def wikipedia(data):
     try:
         summary = wikipedia_module.summary(data)
         output = "[{ 'search': '%s', 'summary': '%s' }]" % (data, summary)
-        return output
+
+        resp = Response(output, status=200)
+
+        return resp
     except:
         error = 'Search was not able to find a result'
         output = "[{ 'error': '%s'}]" % (error)
-        return output
+
+        resp = Response(output, status=200)
+
+        return resp
 
 if __name__ == '__main__':
     app.run()
