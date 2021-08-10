@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, jsonify, make_response
 from flask_cors import CORS, cross_origin
 import wikipedia as wikipedia_module
 
@@ -18,18 +18,15 @@ def welcome():
 def wikipedia(data):
     try:
         summary = wikipedia_module.summary(data)
-        output = "[{ 'search': '%s', 'summary': '%s' }]" % (data, summary)
+        output = { 'search': data, 'summary': summary }
 
-        resp = Response(output, status=200)
-
-        return resp
+        return make_response(jsonify(output))
+   
     except:
         error = 'Search was not able to find a result'
-        output = "[{ 'error': '%s'}]" % (error)
+        output = { 'error': error }
 
-        resp = Response(output, status=200)
-
-        return resp
+        return make_response(jsonify(output))
 
 if __name__ == '__main__':
     app.run()
