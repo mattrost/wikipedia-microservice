@@ -19,7 +19,7 @@ def wikipedia(data):
     try:
         summary = wikipedia_module.summary(data)
         response = {
-            'search': data
+            'search': data,
             'summary': summary
         }
         return response
