@@ -18,13 +18,13 @@ def welcome():
 def wikipedia(data):
     try:
         summary = wikipedia_module.summary(data)
-        response = {
+        response = [{
             'search': data,
             'summary': summary
-        }
+        }]
         return response
     except:
-        error = 'Wikipedia search had errors, please try another search query.'
+        [{ 'error': 'Search was not able to find a result' }]
         return error
 
 if __name__ == '__main__':
