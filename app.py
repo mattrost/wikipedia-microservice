@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response
 from flask_cors import CORS, cross_origin
 import wikipedia as wikipedia_module
 
