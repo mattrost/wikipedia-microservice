@@ -9,6 +9,7 @@ app.config['CORS_HEADERS'] = 'Content-type'
 @app.route('/')
 @cross_origin()
 def welcome():
+   
     welcome = 'Hello! Please enter a wikipedia search after the `.com/` to search for a Wikipedia summary.'
     return welcome
 
@@ -17,7 +18,11 @@ def welcome():
 def wikipedia(data):
     try:
         summary = wikipedia_module.summary(data)
-        return summary
+        response = {
+            'search': data
+            'summary': summary
+        }
+        return response
     except:
         error = 'Wikipedia search had errors, please try another search query.'
         return error
